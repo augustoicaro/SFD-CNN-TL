@@ -1,10 +1,8 @@
 name: Fault
 dependencies:
   - pip=10.0.1=py35_0
-  - python=3.5.6=he025d50_0
+  - python=3.5.6
   - setuptools=40.2.0=py35_0
-  - vc=14.1=h0510ff6_4
-  - vs2015_runtime=14.15.26706=h3a45250_0
   - wheel=0.31.1=py35_0
   - pip:
     - absl-py==0.2.2
