@@ -80,7 +80,7 @@ dependencies:
     - pytz==2018.4
     - pywavelets==0.5.2
     - pywinpty==0.5.5
-    - pyyaml==3.12
+    - pyyaml==3.13
     - pyzmq==17.0.0
     - qtconsole==4.3.1
     - requests==2.20.1
