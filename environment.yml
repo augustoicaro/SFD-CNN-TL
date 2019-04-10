@@ -70,7 +70,6 @@ dependencies:
     - pillow==5.1.0
     - prompt-toolkit==1.0.15
     - protobuf==3.6.0
-    - ptyprocess==0.5.2
     - pygments==2.2.0
     - pymongo==3.6.1
     - pyparsing==2.2.0
