@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2018 Axelle Pochet
+# Copyright 2019 Augusto Cunha and Axelle Pochet
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of this code and 
 # associated documentation files, to deal in the code without restriction, 
@@ -16,9 +16,9 @@
 # DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
 # OUT OF OR IN CONNECTION WITH THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
 __license__ = "MIT"
-__author__ = "Axelle Pochet, Augusto Cunha"
-__email__ = "axelle@tecgraf.puc-rio.br, acunha@tecgraf.puc-rio.br"
-__credits__ = ["Axelle Pochet", "Augusto Cunha", "Helio Lopes", "Marcelo Gattass"]
+__author__ = "Augusto Cunha, Axelle Pochet"
+__email__ = "acunha@tecgraf.puc-rio.br, axelle@tecgraf.puc-rio.br"
+__credits__ = ["Augusto Cunha", "Axelle Pochet", "Helio Lopes", "Marcelo Gattass"]
 
 from keras import backend as K
 

@@ -1,19 +1,28 @@
+*This page is available as an executable or viewable **Jupyter Notebook**:*
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndView.ipynb)
+[![NbViwer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndView.ipynb)
 
 # This code allows to reproduce results of our article:
 ## Seismic fault detection in real data using Transfer Learning from a Convolutional Neural Network pre-trained with synthetic seismic data
 
+### Notebook visualization
+We provide two option to easily open and see our ipython notebooks:
+- Visualize with [NbViwer](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndView.ipynb)
+- Visualize and modify with [Binder](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndView.ipynb)
+
+We strongly recommend using NbViwer to visualize our notebooks instead open in GitHub, because you will see the interactive plots.
+
 ### Dependencies
-	requirements.txt
+	environment.yml
 	
 To install all requirements in the environment use:
-	pip install -r requirements.txt
+	conda env create -f environment.yml
 
-### Our pre-trained model can be found in:
+### Our F3 Block pre-trained model can be found in:
  	base_model/model.json
  	base_model/model.h5
  	
-### Our dataset can be found in:
+### Our F3 Block slice manualy interpreted dataset can be found in:
  	dataset/fault
  	dataset/nonfault
  
@@ -38,5 +47,11 @@ Other sections can be classified modifying the classify.py and classify_with_SVM
  	
 ### Metrics:
  	metrics.py : computes quality metrics (accuracy, sensitivity, specificity = recall, F1-score, ROC AUC and we added precision)
+    
+### Interactive examples:
+	classifyAndViewF3.ipynb: Classify selected sections of F3 seismic data with all pretrained methods and show the results
+	classifyAndViewGSB.ipynb: Classify selected sections of GSB seismic data with all pretrained methods and show the results
+	TrainAndSave.ipynb: Train all methods with one interpreted section of a real data and save network weights
+    
 
 

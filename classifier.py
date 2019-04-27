@@ -1,3 +1,25 @@
+#!/usr/bin/env python
+# Copyright 2019 Augusto Cunha and Axelle Pochet
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this code and 
+# associated documentation files, to deal in the code without restriction, 
+# including without limitation the rights to use, copy, modify, merge, publish, distribute, 
+# sublicense, and/or sell copies of the code, and to permit persons to whom the code is 
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or 
+# substantial portions of the code.
+#
+# THE CODE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT 
+# NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+# OUT OF OR IN CONNECTION WITH THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
+__license__ = "MIT"
+__author__ = "Augusto Cunha, Axelle Pochet"
+__email__ = "acunha@tecgraf.puc-rio.br, axelle@tecgraf.puc-rio.br"
+__credits__ = ["Augusto Cunha", "Axelle Pochet", "Helio Lopes", "Marcelo Gattass"]
+
 from keras import backend as K
 K.set_image_dim_ordering('tf')
 
@@ -19,7 +41,9 @@ def processPatches(data, patch_size, pixel_step, resize, nb_channels):
     
     # get image info
     nb_rows = data.shape[0] 
-    nb_cols = data.shape[1] 
+    nb_cols = data.shape[1]
+    print(nb_rows)
+    print(nb_cols)
     
     count_patches = 0
     patch_name_list = []
