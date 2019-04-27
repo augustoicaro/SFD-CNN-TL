@@ -1,14 +1,14 @@
-*This page is available as an executable or viewable **Jupyter Notebook**:*
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndView.ipynb)
-[![NbViwer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndView.ipynb)
+*This page is available as an executable or viewable **Jupyter Notebook**:* 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndViewGSB.ipynb)
+[<img src="https://github.com/jupyter/design/blob/master/logos/Badges/nbviewer_badge.png?raw=true" alt="NbViwer" width="109"/>](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndViewGSB.ipynb)
 
 # This code allows to reproduce results of our article:
 ## Seismic fault detection in real data using Transfer Learning from a Convolutional Neural Network pre-trained with synthetic seismic data
 
 ### Notebook visualization
 We provide two option to easily open and see our ipython notebooks:
-- Visualize with [NbViwer](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndView.ipynb)
-- Visualize and modify with [Binder](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndView.ipynb)
+- Visualize with [NbViwer](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndViewGSB.ipynb)
+- Visualize and modify with [Binder](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndViewGSB.ipynb)
 
 We strongly recommend using NbViwer to visualize our notebooks instead open in GitHub, because you will see the interactive plots.
 
