@@ -44,7 +44,8 @@ dependencies:
     - jupyter-client==5.2.3
     - jupyter-console==5.2.0
     - jupyter-core==4.4.0
-    - keras==2.1.2
+    - keract==2.5.4
+    - keras==2.2.4
     - kiwisolver==1.0.1
     - llvmlite==0.26.0
     - markdown==2.6.11
