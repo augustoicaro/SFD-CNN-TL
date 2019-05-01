@@ -16,6 +16,7 @@ We strongly recommend using NbViwer to visualize our notebooks instead open in G
 	environment.yml
 	
 To install all requirements in the environment use:
+
 	conda env create -f environment.yml
 
 ### Our F3 Block pre-trained model can be found in:
