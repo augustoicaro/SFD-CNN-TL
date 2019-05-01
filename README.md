@@ -18,6 +18,10 @@ We strongly recommend using NbViwer to visualize our notebooks instead open in G
 To install all requirements in the environment use:
 
 	conda env create -f environment.yml
+	
+Sometimes is needed to create a kernel of the environment to jupyter notebooks:
+
+	python -m ipykernel install --user --name sfd --display-name "SFD-CNN-TL"
 
 ### Our F3 Block pre-trained model can be found in:
  	base_model/model.json
