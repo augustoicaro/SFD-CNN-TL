@@ -3,7 +3,7 @@
 [<img src="https://github.com/jupyter/design/blob/master/logos/Badges/nbviewer_badge.png?raw=true" alt="NbViwer" width="109"/>](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndViewGSB.ipynb)
 
 # This code allows to reproduce results of our article:
-## Seismic fault detection in real data using Transfer Learning from a Convolutional Neural Network pre-trained with synthetic seismic data
+## Seismic fault detection in real data using Transfer Learning from a Convolutional Neural Network pre-trained with synthetic seismic data [https://doi.org/10.1016/j.cageo.2019.104344](https://doi.org/10.1016/j.cageo.2019.104344)
 
 ### Notebook visualization
 We provide two option to easily open and see our ipython notebooks:
