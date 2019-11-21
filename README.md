@@ -5,6 +5,23 @@
 # This code allows to reproduce results of our article:
 ## Seismic fault detection in real data using Transfer Learning from a Convolutional Neural Network pre-trained with synthetic seismic data [https://doi.org/10.1016/j.cageo.2019.104344](https://doi.org/10.1016/j.cageo.2019.104344)
 
+## Publications
+If you find this work helpful in your research, please cite:
+```
+@article{cunha2020SFD,
+title = "Seismic fault detection in real data using transfer learning from a convolutional neural network pre-trained with synthetic seismic data",
+journal = "Computers & Geosciences",
+volume = "135",
+pages = "104344",
+year = "2020",
+issn = "0098-3004",
+doi = "https://doi.org/10.1016/j.cageo.2019.104344",
+url = "http://www.sciencedirect.com/science/article/pii/S0098300418307040",
+author = "Augusto Cunha and Axelle Pochet and Hélio Lopes and Marcelo Gattass",
+keywords = "Transfer learning, Convolutional neural network, Seismic fault"
+}
+```
+
 ### Notebook visualization
 We provide two option to easily open and see our ipython notebooks:
 - Visualize with [NbViwer](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndViewGSB.ipynb)
