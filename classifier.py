@@ -23,27 +23,57 @@ __credits__ = ["Augusto Cunha", "Axelle Pochet", "Helio Lopes", "Marcelo Gattass
 from keras import backend as K
 K.set_image_dim_ordering('tf')
 
+import tensorflow as tf
+config = tf.ConfigProto()
+config.gpu_options.allow_growth=True
+K.set_session(tf.Session(config=config))
+
+import gc
 import cv2, os, numpy, sys
 import pandas as pd
 import multiprocessing
 import time
 
-from keras.models import model_from_json
+from keras.models import model_from_json, Sequential
 from joblib import Parallel, delayed
 
 
 numpy.random.seed(1337)
 
+# Reset Keras Session
+def reset_keras(base_model, model):
+    sess = K.get_session()
+    K.clear_session()
+    sess.close()
+    sess = K.get_session()
+
+    try:
+        del base_model
+        del model
+    except:
+        pass
+
+    print(gc.collect()) # if it's done something you should see a number being outputted
+
+    # use the same config as you used to create the session
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth=True
+    #config.gpu_options.visible_device_list = "0"
+    K.set_session(tf.Session(config=config))
+
 def processPatches(data, patch_size, pixel_step, resize, nb_channels):
     # get data
-    section_mat = data.values
+    if isinstance(data, pd.DataFrame):
+        section_mat = data.values
+    else:
+        section_mat = data
     half_patch = int(patch_size/2)
     
     # get image info
     nb_rows = data.shape[0] 
     nb_cols = data.shape[1]
-    print(nb_rows)
-    print(nb_cols)
+    #print(nb_rows)
+    #print(nb_cols)
     
     count_patches = 0
     patch_name_list = []
@@ -69,11 +99,11 @@ def processPatches(data, patch_size, pixel_step, resize, nb_channels):
     
     return patch_list, patch_name_list
 
-def classify(input_dir, patch_size, pixel_step, jsonModelFilePath, weightsFilePath, modelName):
+def classify(input_dir, patch_size, resize_size, pixel_step, jsonModelFilePath, weightsFilePath, modelName):
     start_time = time.time()
     
     # set params
-    resize = 45 
+    resize = resize_size 
     imageChannels = 1
     
     # create output directory
@@ -94,9 +124,9 @@ def classify(input_dir, patch_size, pixel_step, jsonModelFilePath, weightsFilePa
         
     # load model
     jsonModelFile = open(jsonModelFilePath, 'r' )
-    jsonModel = jsonModelFile.read()
+    base_model = jsonModelFile.read()
     jsonModelFile.close()
-    model = model_from_json(jsonModel)
+    model = model_from_json(base_model)
     model.load_weights(weightsFilePath)
     model.compile( loss='binary_crossentropy', optimizer='sgd', metrics=[ 'accuracy' ] )
     
@@ -148,13 +178,14 @@ def classify(input_dir, patch_size, pixel_step, jsonModelFilePath, weightsFilePa
                 predictionsFile.write( patch_name + " " + str(prediction) + "\n" )
             predictionsFile.close()
                
+    reset_keras(base_model,model)
     print("--- %s seconds ---" % (time.time() - start_time))
     
-def classifySVM(input_dir, patch_size, pixel_step, jsonModelFilePath, weightsFilePath, modelName, svmModelPath):
+def classifySVM(input_dir, patch_size, resize_size, pixel_step, jsonModelFilePath, weightsFilePath, modelName, svmModelPath):
     start_time = time.time()
 
     # set params
-    resize = 45 # todo = read from json model
+    resize = resize_size # todo = read from json model
     imageChannels = 1
     
     # create output directory
@@ -177,12 +208,11 @@ def classifySVM(input_dir, patch_size, pixel_step, jsonModelFilePath, weightsFil
     jsonModelFile = open(jsonModelFilePath, 'r' )
     jsonModel = jsonModelFile.read()
     jsonModelFile.close()
-    model = model_from_json(jsonModel)
-    model.load_weights(weightsFilePath)    
+    base_model = model_from_json(jsonModel)
+    base_model.load_weights(weightsFilePath)
     #------ delete last layers -------
-    for i in range (7):
-        model.layers.pop()
-        model.outputs = [model.layers[-1].output]
+    model = Sequential(base_model.layers[:-7])
+    
     #------ Load SVM
     from sklearn.externals import joblib
     clf = joblib.load(svmModelPath) 
@@ -237,7 +267,8 @@ def classifySVM(input_dir, patch_size, pixel_step, jsonModelFilePath, weightsFil
                 prediction = current_sections_prediction_lists[i][j]
                 predictionsFile.write( patch_name + " " + str(prediction) + "\n" )
             predictionsFile.close()
-        
+    
+    reset_keras(base_model,model)
     print("--- %s seconds ---" % (time.time() - start_time))
 
 
