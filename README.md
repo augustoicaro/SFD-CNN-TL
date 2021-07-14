@@ -2,6 +2,8 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/augustoicaro/SFD-CNN-TL/master?filepath=classifyAndViewGSB.ipynb)
 [<img src="https://github.com/jupyter/design/blob/master/logos/Badges/nbviewer_badge.png?raw=true" alt="NbViwer" width="109"/>](https://nbviewer.jupyter.org/github/augustoicaro/SFD-CNN-TL/blob/master/classifyAndViewGSB.ipynb)
 
+[![DOI](https://img.shields.io/badge/DOI-10.1016/j.cageo.2019.104344-blue)](https://doi.org/10.1016/j.cageo.2019.104344)
+
 # This code allows to reproduce results of our article:
 ## Seismic fault detection in real data using Transfer Learning from a Convolutional Neural Network pre-trained with synthetic seismic data [https://doi.org/10.1016/j.cageo.2019.104344](https://doi.org/10.1016/j.cageo.2019.104344)
 
